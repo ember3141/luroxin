@@ -28,8 +28,12 @@
 <body>
 
 
-                <img src="wip.jpg" style="width:300px;" alt="luroxin.com"/>
-
+                <img src="luroxin fog.jpg" style="width:100vw;" alt="luroxin.com"/>
+                <img src="hollo.png" style="width:400px;filter: drop-shadow(30px 30px 4px #000);" alt="luroxin.com"/>
+                <img src="LXN wave.jpg" style="width:40vw;" alt="luroxin.com"/>
+                <img src="luroxin (1).jpg" style="width:3 0vw;" alt="luroxin.com"/>
+<p style="font-size: 1 em; margin-left: 35vw;">© Luroxin, Inc. All rights reserved.</p>
+<div style="width:100%;background-color:#fdfdfd;"><p style="margin-left:48vw;">projects</p></div>
 </body>
 
 </html>
