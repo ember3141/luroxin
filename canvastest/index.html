@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>luroxin.com</title>
+    <meta name="description"
+        content="Luroxin — portfolio, design, and development projects by Luroxin. Explore creative, technical, and digital work." />
+    <meta name="keywords" content="Luroxin, portfolio, design, development, creative projects, software, web design" />
+    <meta name="author" content="Luroxin" />
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        const mouse = { x: 0, y: 0 };
+
+        canvas.addEventListener("mousemove", (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        // Draw a red rectangle
+
+        let frameCount = 0;
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'red';
+            ctx.fillRect(mouse.x, mouse.y, 150, 100);
+            frameCount++; // Increment frameCount with each frame
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate); 
+    </script>
+
+</body>
+
+</html>

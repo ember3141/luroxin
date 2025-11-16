@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>luroxin.com</title>
+    <meta name="description"
+        content="Luroxin — portfolio, design, and development projects by Luroxin. Explore creative, technical, and digital work." />
+    <meta name="keywords" content="Luroxin, portfolio, design, development, creative projects, software, web design" />
+    <meta name="author" content="Luroxin" />
+    <!--  SOCIAL + GOOGLE PREVIEW -->
+    <meta property="og:title" content="Luroxin — Portfolio & Projects" />
+    <meta property="og:description" content="Explore design and development projects from Luroxin." />
+    <meta property="og:image" content="https" />
+    <meta property="og:url" content="https" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!--  PERFORMANCE = -->
+    <link rel="preload" href="luroxin fog.jpg" as="image" />
+</head>
+<style>
+    * {
+        line-height: calc(4px + 2ex);
+        box-sizing: border-box;
+    }
+
+    :root {
+        scroll-behavior: smooth;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-family: space-grotesk, system-ui, sans-serif;
+        /* font-size: calc(15px + 0.390625vw * 1.75); */
+        font-size: clamp(16px, 1.4vw, 20px);
+        text-align: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+    }
+
+    :root::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 0;
+    }
+
+
+    .projects>img {
+        border-radius: 12.5px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .projects>p {
+        display: block;
+        max-width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projects {
+        background: #ffffff;
+        /* background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 14%, rgba(255, 255, 255, 0.23) 34%, rgba(255, 255, 255, 0) 100%); */
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 100%;
+        padding: 0;
+        margin-top: 3rem;
+        width: 60rem;
+    }
+
+    a {
+        color: rgb(0, 0, 0);
+        text-underline-offset: 0.1em;
+        overflow-wrap: anywhere;
+        outline: none;
+    }
+
+    .projects a {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 0rem;
+        padding: 1rem 0 !important;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .glassy {
+        background-color: rgba(152, 170, 172, 0);
+        /* border-radius: 16px; */
+        /*border: thin solid rgba(24, 36, 22, 0.2);*/
+        padding: 0;
+        user-select: none;
+    }
+
+    .projects a.glassy {
+        display: flex;
+        flex-direction: column;
+        background: rgba(250, 250, 250, 0.5);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin: 0.75rem 0;
+        text-decoration: none;
+        color: black;
+        transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+
+
+    .projects a.glassy:hover {
+        background: rgba(255, 255, 255, 0.75);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 700px) {
+        .projects a.glassy {
+            backdrop-filter: blur(1px);
+            /* was 8px */
+            background: rgba(255, 255, 255, 0.25);
+            /* was ~0.5 */
+        }
+    }
+
+
+
+    a[href="#_"] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        height: 100lvh;
+        background-color: #0005;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0s 0.3s;
+        cursor: default;
+        backdrop-filter: blur(4px);
+    }
+
+    th,
+    td {
+        border: 3px solid #7c7685;
+        padding: 0.5rem;
+        width: min-content;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+        width: 100%;
+    }
+
+    footer {
+        display: flex;
+        width: 85rem;
+        margin: 1rem;
+        margin-top: 5rem;
+        align-items: center;
+        gap: 0.5rem;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        background: rgba(250, 250, 250, 0.5);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-decoration: none;
+        color: black;
+        transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+    footer div {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    footer p {
+        margin: 0;
+        text-align: center;
+    }
+
+    #bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 1s ease;
+    }
+
+    #bg.show {
+        opacity: 1;
+    }
+</style>
+<body>
+    <canvas id="bg"></canvas>
+    <script>
+        const mainCanvas = document.getElementById('bg');
+        const mainCtx = mainCanvas.getContext('2d');
+
+        const offscreenCanvas = document.createElement('canvas');
+        const ctx = offscreenCanvas.getContext('2d');
+
+        const IX = 200;
+        let IY = 200;
+        let imgData = ctx.createImageData(IX, IY);
+        let t = 0;
+        let start = Date.now();
+        let g = {};
+        var a = 0;
+        var state = 0;
+        const max = 6;
+
+        function hsbToRgb(h, s, v) {
+            let r, g, b;
+            h /= 360;
+            s /= 100;
+            v /= 100;
+
+            if (s === 0) {
+                r = g = b = v;
+            } else {
+                let i = Math.floor(h * 6);
+                let f = h * 6 - i;
+                let p = v * (1 - s);
+                let q = v * (1 - f * s);
+                let t = v * (1 - (1 - f) * s);
+
+                switch (i % 6) {
+                    case 0: r = v; g = t; b = p; break;
+                    case 1: r = q; g = v; b = p; break;
+                    case 2: r = p; g = v; b = t; break;
+                    case 3: r = p; g = q; b = v; break;
+                    case 4: r = t; g = p; b = v; break;
+                    case 5: r = v; g = p; b = q; break;
+                }
+            }
+
+            return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+        }
+
+        function setPixel(x, y, rgbColor) {
+            x = Math.floor(x);
+            y = Math.floor(y);
+
+            if (x < 0 || x >= IX || y < 0 || y >= IY) {
+                return;
+            }
+
+            const [r, g, b] = rgbColor;
+
+            const index = (y * IX + x) * 4;
+            imgData.data[index] = r;
+            imgData.data[index + 1] = g;
+            imgData.data[index + 2] = b;
+            imgData.data[index + 3] = 255;
+        }
+
+        function bline(x0, y0, x1, y1, color) {
+            x0 = Math.floor(x0);
+            y0 = Math.floor(y0);
+            x1 = Math.floor(x1);
+            y1 = Math.floor(y1);
+            var dx = Math.abs(x1 - x0);
+            var dy = Math.abs(y1 - y0);
+            var sx = (x0 < x1) ? 1 : -1;
+            var sy = (y0 < y1) ? 1 : -1;
+            var err = dx - dy;
+
+            while (true) {
+                setPixel(x0, y0, color);
+                if ((x0 == x1) && (y0 == y1)) break;
+                var e2 = 2 * err;
+                if (e2 > -dy) {
+                    err -= dy;
+                    x0 += sx;
+                }
+                if (e2 < dx) {
+                    err += dx;
+                    y0 += sy;
+                }
+            }
+        }
+
+        g = {};
+
+        function draw() {
+            // console.log(date.now)
+            if ((Date.now() - start) % 5000 < 17 && !t) {
+                t = 1;
+                state = (state + 1) % (max + 1);
+                a = 0;
+                imgData = ctx.createImageData(IX, IY);
+            }
+            t = ((Date.now() - start) % 5000 < 17) ? t : 0;
+
+
+
+            a++;
+            g.last = 0;
+            // H = (5 * a) % 360, S = 70, B = 100
+            const hue = (5 * a) % 360;
+            const color = hsbToRgb(hue, 30, 100);
+
+            for (var x = 1; x < IX; x++) {
+
+                let lastInt = Math.floor(g.last);
+
+                switch (state) {
+                    case 0:
+                        let r5 = Math.random();
+                        g.cur = (50 * Math.sin(a)) * Math.sin(x / 5 + (r5 * 0.5) + a) + 50;
+                        setPixel(x, g.cur, color);
+                        break;
+                    case 1:
+                        g.cur = IY * Math.asin((x / (0.5 / Math.sin(x * a))) / a) + 50;
+                        setPixel(x, g.cur, color);
+                        break;
+                    case 2:
+                        g.cur = IX * Math.sin(x * IY + a * 0.08) + a;
+                        setPixel(x, g.cur, color);
+                        break;
+                    case 3:
+                        g.cur = 2.5 * IX * Math.sin(x + (a * 0.05)) + 400 + g.last / a;
+                        setPixel(x, g.cur, color);
+
+                        break;
+                    case 4:
+                        g.cur = a / x * (Math.cos(x * g.last) * x ^ 2 + lastInt ^ 2 - 1000);
+                        setPixel(x, g.cur, color);
+
+                        break;
+                    case 5:
+                        g.cur = 1000 * Math.sin((a / 20) * a * Math.floor(a * x ** 2)) / x + 50;
+                        setPixel(x, g.cur, color);
+                        break;
+                    case 6:
+                        let r6 = Math.random();
+                        g.cur = 50 * Math.sin(x / 10 + (r6 * 0.01)) + 100 * r6;
+                        bline(x, g.cur, x, g.last, color);
+                        break;
+                }
+
+                if (isFinite(g.cur)) {
+                    g.last = g.cur;
+                } else {
+                    g.last = 0;
+                }
+            }
+
+            ctx.putImageData(imgData, 0, 0);
+            mainCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+            mainCtx.imageSmoothingEnabled = false;
+            mainCtx.drawImage(offscreenCanvas, 0, 0, mainCanvas.width, mainCanvas.height);
+            requestAnimationFrame(draw);
+        }
+
+        function resizeCanvas() {
+            mainCanvas.width = window.innerWidth;
+            mainCanvas.height = document.documentElement.scrollHeight;
+
+            if (mainCanvas.width === 0) {
+                return;
+            }
+
+            const newIY = Math.floor(IX * (mainCanvas.height / mainCanvas.width));
+
+            if (newIY > 0 && newIY !== IY) {
+                IY = newIY;
+                offscreenCanvas.width = IX;
+                offscreenCanvas.height = IY;
+                imgData = ctx.createImageData(IX, IY);
+            }
+        }
+
+        const observer = new ResizeObserver(() => {
+            resizeCanvas();
+        });
+        observer.observe(document.body);
+
+        window.onload = () => {
+            resizeCanvas();
+            mainCanvas.classList.add('show');
+            requestAnimationFrame(draw);
+        };
+    </script>
+
+    <div class="projects glassy">
+        <img src="luroxin fog.png" alt="luroxin" width="100%" />
+
+        <h2 style="
+  color: black;
+  text-shadow:
+    2px 0 white,
+    -2px 0 white,
+    0 2px white,
+    0 -2px white,
+    1.5px 1.5px white,
+    -1.5px -1.5px white,
+    1.5px -1.5px white,
+    -1.5px 1.5px white;
+">Projects</h2>
+
+        <a href="otamatone/" class="glassy">
+            <h3>Otamatone Mod</h3>
+            Adding an aux output to a kids toy instrument
+        </a>
+        <a href="linearalgebra/" class="glassy">
+            <h3>Interactive Linear Algebra</h3>
+            Learn how vectorspace works with interactive web demos
+        </a>
+        <a href="timeplanner/" class="glassy">
+            <h3>Online Time Planner</h3>
+            A webapp to help you plan your afternoon using visuals
+        </a>
+        <a href="#" class="glassy">
+            <h3>Credit Card Sized Touch Synth</h3>
+            WIP: A tiny synth using ATmega32u4
+        </a>
+        <a href="mididisplay/" class="glassy">
+            <h3>Comissioned Piano Word Exhibit</h3>
+            A midi keyboard that spawns words and phrases as you play
+        </a>
+        <a href="arcadecabinet/" class="glassy">
+            <h3>Visitor survey Arcade Cabinet</h3>
+            Visitor engagement kiosk disguised as an arcade cabinet with glowing buttons and physics simulation
+        </a>
+        <a href="footpetal/" class="glassy">
+            <h3>Wireless Footpetal</h3>
+            Simple no frills bluetooth footpedal, good for music
+        </a>
+        <a href="yogatosh/" class="glassy">
+            <h3>MacOS on a Lenovo Yoga</h3>
+            Guide in progress
+        </a>
+        <a href="https://openprocessing.org/user/327511#sketches" class="glassy">
+            <h3>p5js Graphics Demos</h3>
+            Live p5js web art, cellular automata, games, and visual math
+        </a>
+
+        <a href="#" class="glassy">
+            <h3>Elanore Rigby for Violin, Cello, and Piano</h3>
+            Full arrangement of The Beatles 'Eleanor Rigby'
+        </a>
+
+        <a href="designs" class="glassy">
+            <h3>Cool design gallery</h3>
+            fun designs of my logo
+        </a>
+    </div>
+    <footer>
+        <img src="luroxin (1).jpg" alt="luroxin logo" width="128" height="64" />
+
+        <div>
+            <p>
+                Contact:
+                <a href="mailto:luroxin@luroxin.com">neiltmandir@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

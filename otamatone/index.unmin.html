@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Otamatone with Aux</title>
+
+    <meta name="description" content="A detailed look at a specific project by Luroxin." />
+    <meta name="author" content="Luroxin" />
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="preload" href="../luroxin fog.jpg" as="image" />
+    <link href="../style/article.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="article-content">
+
+        <a href=".." class="logo-link-top">
+            <img src="../luroxin fog.jpg" alt="Luroxin Home" />
+        </a>
+
+        <h1>Otamatone with Aux</h1>
+
+        <div class="project-meta">
+            <strong>Date:</strong> 2025 &nbsp; <strong>Status: </strong>Completed
+        </div>
+
+        <img src="images/otamatoneFinished.jpg" alt="Project banner image" class="project-banner" />
+
+        <p><br />Despite being the form of a children's toy, the otamatone is a more-than-capable analog oscillator.
+            <br />The base version wasn't meant for much more than fiddling around with novice tunes on the tiny touch
+            controller. Pressing it at different locations produces a different resistance to the internal circuit,
+            causing the pitch to change
+        </p>
+        <p>The variable analog resistance across the fingerboard makes playing it similar to a violin; that would be the
+            case if the note intervals weren't incredibly small, making any sort of reasonable note accuracy nearly
+            impossible.</p>
+        <p>The company behind Otamatone does make a larger, more premium model. This model seems to be made with the
+            intention of being a full fledged digital instrument: it has a much larger fingerboard with larger
+            intervals, making it much easier to play melodies on it in tune. But most importantly, it contains an
+            auxiliary audio output.</p>
+        <p>Proper signal processing can turn the sound of one instrument into virtually any other. This is the gist of
+            how electric guitars work, where the guitar itself without any pedals or processing would sound like an
+            acoustic guitar. Simply chaining the audio signal of the guitar with guitar pedals and other effects can get
+            you many unique sounds.</p>
+        <p>I had received this Otamatone as a gift from my sister and I believe it is capable of everything the larger
+            version is, besides being a staggering height of almost twice the base model. <br />It should be
+            straightforward to add a 3.5mm jack to this Otamatone.</p>
+        <p>First I opened the Otamatone to see how it made sound. As I suspected, it used a 2 wire speaker.</p>
+        <div class="image-row">
+            <img src="images/otamatoneSurgery.jpeg" alt="Otamatone completely opened up" style="width:30%"
+                class="project-banner" />
+            <img src="images/otamatoneSpeaker.jpeg" alt="Otamatone shows speaker" style="width:30%"
+                class="project-banner" />
+        </div>
+
+        <p>The main challenge of this modification was to disable the speaker when the Otamatone was plugged in. I
+            considered adding a physical switch to the Otamatone to toggle between speaker and aux output. However,
+            after playing around with the headphone jack on the donor board, I noticed the jack itself had a little
+            switch in it:</p>
+        <img src="images/jack.gif" alt="Jack switch gif" style="width:40%" class="project-banner" />
+        <p>The tip of the 3.5mm male plug would open the circuit to the speaker. <br />After desoldering the jack off
+            the doner board, I wired the positive
+            terminal of the Otamatone to the tip of the headphone jack, which was connected to the switch. <br /> </p>
+        <p>Then I
+            soldered the opposite side of the switch to the speaker. Before I soldered both the speaker and the
+            headphone jack to ground, I added a resistor to the ground of the headphone jack. I didn't want the full
+            power of the speaker output for the aux.</p>
+        <img src="images/myAux.jpeg" alt="My aux all wired up" style="width:40%" class="project-banner" />
+        <p>The Otamatone does not have a hole for a 3.5mm jack. I took a dremel to the side of the Otamatone casing,
+            ensuring it would not run into the circuit board. Surprisingly, the Otamatone is incredibly hollow. There
+            was more than enough room for my headphone jack, and possible other future modifications ( 👀 )</p>
+        <img src="images/auxFits.jpeg" alt="The aux fits in the casing" style="width:30%" class="project-banner" />
+        <p>I was unhappy with how rough the opening was, so I wanted to smooth it out. Apparently the Otamatone is made
+            of ABS plastic, so I had the idea of taking acetone to the rough edge as I've seen people do this to smooth
+            out 3d prints.</p>
+        <img src="images/messyFinal.jpeg" alt="Messy aux opening" style="width:30%" class="project-banner" />
+        <p>This was unsuccessful, so I ended up buffing it out with the dremel.</p>
+        <img src="images/cleanFinal.jpeg" alt="Clean aux opening" style="width:30%" class="project-banner" />
+        <p>After reassembling the Otamatone to test it, I was pleasantly surprised to see the headphone jack stayed
+            firmly in place without glue. This is surprising as the jack withstands a lot of force with plugging and
+            unplugging.</p>
+        <p>I am planning on making a full set of analog audio signal processing circuits, so the Otamatone will be the
+            first oscillator chained with them.</p>
+
+
+
+
+
+        <a href=".." class="logo-link-bottom">
+            <img src="../luroxin fog.jpg" alt="Luroxin Home" />
+        </a>
+
+    </div>
+
+</body>
+
+</html>

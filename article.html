@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <title>Project Title - luroxin.com</title>
+    
+    <meta name="description"
+        content="A detailed look at a specific project by Luroxin." />
+    <meta name="author" content="Luroxin" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preload" href="../luroxin fog.jpg" as="image" />
+</head>
+<style>
+    * {
+        line-height: calc(4px + 2ex);
+        box-sizing: border-box;
+    }
+
+    :root {
+        scroll-behavior: smooth;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-family: space-grotesk, system-ui, sans-serif;
+        font-size: clamp(16px, 1.4vw, 20px);
+        text-align: center;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    :root::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin: 0;
+    }
+
+    a {
+        color: rgb(0, 0, 0);
+        text-underline-offset: 0.1em;
+        overflow-wrap: anywhere;
+        outline: none;
+    }
+
+    .article-content { 
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 100%;
+        padding: 0 1rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        width: 85rem;
+        text-align: left;
+    }
+    
+    .logo-link {
+        align-self: flex-start;
+        margin-bottom: 1.5rem;
+        transition: opacity 0.15s ease;
+        line-height: 0;
+    }
+    
+    .logo-link img {
+        width: 128px;
+        height: 64px;
+        border-radius: 8px;
+    }
+    
+    .logo-link:hover {
+        opacity: 0.8;
+    }
+    
+    .article-content h1,
+    .article-content h2,
+    .article-content h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .article-content h1 {
+        font-size: 2.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    .article-content h2 {
+        font-size: 1.75rem;
+        margin-top: 2.5rem;
+    }
+
+    .article-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+    
+    .article-content .project-banner {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .article-content .project-meta {
+        text-align: center;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 2.5rem;
+    }
+    
+    .article-content pre {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        overflow-x: auto;
+        font-family: monospace;
+    }
+    
+    .article-content code {
+        font-family: monospace;
+    }
+    
+</style>
+
+<body>
+
+    <div class="article-content"> 
+    
+        <a href=".." class="logo-link">
+            <img src="../luroxin fog.jpg" alt="Luroxin Home" />
+        </a>
+        
+        <h1>Project Title Goes Here</h1>
+        
+        <div class="project-meta">
+            <strong>Date:</strong> October 2025 | <strong>Tools:</strong> p5.js, JavaScript, Arduino
+        </div>
+        
+        <img 
+            src="https://placehold.co/1200x600/eee/ccc?text=Project+Banner" 
+            alt="Project banner image" 
+            class="project-banner"
+        />
+        
+        <p>This is the introduction paragraph. It should briefly summarize the project, the problem it solves, and the main technologies used. Hook the reader here.</p>
+        
+        <h2>The Challenge</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel risus nec sem venenatis finibus. Sed gravida, elit ac sagittis Cursus, sem libero iaculis ante, in egestas nulla nisl et nulla. Describe the problem you set out to solve. What was the goal?</p>
+        
+        <h2>My Process & Design</h2>
+        <p>Nullam in felis eu sem finibus frcommodo. Donec et leo Iaculis, vehicula velit vel, interdum elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Talk about how you approached the problem. What were the steps?</p>
+        
+        <img 
+            src="https://placehold.co/800x400/eee/ccc?text=Process+Image" 
+            alt="Diagram or sketch of the process" 
+            class="project-banner"
+        />
+        
+        <p>This section can also include technical details. You can even include code snippets.</p>
+        
+        <pre><code>function helloWorld() {
+  console.log("Here is a code block!");
+}</code></pre>
+
+        <h2>Results & Lessons Learned</h2>
+        <p>Vivamus sit amet felis ut ipsum facilisisMollis. Sed sit amet mi ex. Integer in justo eget nulla egestas iaculis. What was the final result? What did you learn from this project?</p>
+        
+    </div>
+
+</body>
+
+</html>
