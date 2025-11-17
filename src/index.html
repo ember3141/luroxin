@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -220,7 +221,37 @@
     #bg.show {
         opacity: 1;
     }
+
+    .floating-about {
+        position: fixed;
+        bottom: clamp(12px, 3vw, 24px);
+        right: clamp(12px, 3vw, 24px);
+
+        /* Responsive padding and font size */
+        padding: clamp(0.5rem, 2vw, 0.85rem) clamp(0.9rem, 3vw, 1.5rem);
+        font-size: clamp(0.95rem, 2.3vw, 1.5rem);
+
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        transition: background 0.2s ease, transform 0.15s ease;
+        z-index: 9999;
+    }
+
+    .floating-about:hover {
+        background: rgba(255, 255, 255, 0.85);
+        transform: translateY(-2px);
+    }
 </style>
+<a href="about" class="floating-about">About Me!</a>
+
 <body>
     <canvas id="bg"></canvas>
     <script>
@@ -442,10 +473,6 @@
             <h3>Online Time Planner</h3>
             A webapp to help you plan your afternoon using visuals
         </a>
-        <a href="#" class="glassy">
-            <h3>Credit Card Sized Touch Synth</h3>
-            WIP: A tiny synth using ATmega32u4
-        </a>
         <a href="mididisplay/" class="glassy">
             <h3>Comissioned Piano Word Exhibit</h3>
             A midi keyboard that spawns words and phrases as you play
@@ -453,10 +480,6 @@
         <a href="arcadecabinet/" class="glassy">
             <h3>Visitor survey Arcade Cabinet</h3>
             Visitor engagement kiosk disguised as an arcade cabinet with glowing buttons and physics simulation
-        </a>
-        <a href="footpetal/" class="glassy">
-            <h3>Wireless Footpetal</h3>
-            Simple no frills bluetooth footpedal, good for music
         </a>
         <a href="yogatosh/" class="glassy">
             <h3>MacOS on a Lenovo Yoga</h3>
@@ -476,9 +499,17 @@
             <h3>Cool design gallery</h3>
             fun designs of my logo
         </a>
+        <a href="#" class="glassy">
+            <h3>Credit Card Sized Touch Synth</h3>
+            WIP: A tiny synth using ATmega32u4
+        </a>
+        <a href="footpetal/" class="glassy">
+            <h3>Wireless Footpetal</h3>
+            Simple no frills bluetooth footpedal, good for music
+        </a>
     </div>
     <footer>
-        <img src="/src/media/luroxin (1).jpg" alt="luroxin logo" width="128" height="64" />
+        <!-- <img src="/src/media/luroxin (1).jpg" alt="luroxin logo" width="128" height="64" /> -->
 
         <div>
             <p>

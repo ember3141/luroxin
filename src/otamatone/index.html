@@ -31,16 +31,17 @@
 
         <img src="images/otamatoneFinished.jpg" alt="Project banner image" class="project-banner" />
 
-        <p><br />Despite being the form of a children's toy, the otamatone is a more-than-capable analog oscillator.
-            <br />The base version wasn't meant for much more than fiddling around with novice tunes on the tiny touch
-            controller. Pressing it at different locations produces a different resistance to the internal circuit,
-            causing the pitch to change
-        </p>
+        <p>Despite being the form of a children's toy, the Otamatone is a more-than-capable analog oscillator. </p>
+        <p>
+            The base version wasn't meant for much more than fiddling around with novice tunes on the tiny touch
+            controller.
+            Pressing it at different locations produces a different resistance to the internal circuit, causing the
+            pitch to change</p>
         <p>The variable analog resistance across the fingerboard makes playing it similar to a violin; that would be the
             case if the note intervals weren't incredibly small, making any sort of reasonable note accuracy nearly
             impossible.</p>
-        <p>The company behind Otamatone does make a larger, more premium model. This model seems to be made with the
-            intention of being a full fledged digital instrument: it has a much larger fingerboard with larger
+        <p>The company behind the Otamatone makes a larger, more premium model. This model seems to be made with the
+            intention of being a full-fledged digital instrument: it has a much larger fingerboard with larger
             intervals, making it much easier to play melodies on it in tune. But most importantly, it contains an
             auxiliary audio output.</p>
         <p>Proper signal processing can turn the sound of one instrument into virtually any other. This is the gist of
@@ -48,8 +49,9 @@
             acoustic guitar. Simply chaining the audio signal of the guitar with guitar pedals and other effects can get
             you many unique sounds.</p>
         <p>I had received this Otamatone as a gift from my sister and I believe it is capable of everything the larger
-            version is, besides being a staggering height of almost twice the base model. <br />It should be
-            straightforward to add a 3.5mm jack to this Otamatone.</p>
+            version is, though the larger version is a staggering height of almost twice this base model. <br />To give
+            the base model added capability similar to the larger model it should be straightforward to add a 3.5mm jack
+            to this Otamatone.</p>
         <p>First I opened the Otamatone to see how it made sound. As I suspected, it used a 2 wire speaker.</p>
         <div class="image-row">
             <img src="images/otamatoneSurgery.jpeg" alt="Otamatone completely opened up" style="width:30%"
@@ -68,8 +70,19 @@
             terminal of the Otamatone to the tip of the headphone jack, which was connected to the switch. <br /> </p>
         <p>Then I
             soldered the opposite side of the switch to the speaker. Before I soldered both the speaker and the
-            headphone jack to ground, I added a resistor to the ground of the headphone jack. I didn't want the full
+            headphone jack to ground, I wanted to add a resistor to the ground of the headphone jack. I didn't want the
+            full
             power of the speaker output for the aux.</p>
+        <p> I originally had the idea of using a variable resistor, so I could fine tune the output volume of the aux
+        </p>
+        <img src="images/varresist.jpg" alt="My aux all wired up" style="width:20%" class="project-banner" />
+        <p>However, the variable resistor was too large to easily inside the otamatone. I opted to use a static resistor
+            instead.</p>
+        <p>To avoid the pain of repeatedly soldering and unsoldering various resistor values, I soldered two female
+            wires so that I could hotswap resistors</p>
+        <img src="images/testresistor.jpg" alt="My aux all wired up" style="width:40%" class="project-banner" />
+        <p>After setting on a 4.7k ohm resistor, I removed the female wires, clipped the resistor legs down, and
+            soldered it directly on the jack. </p>
         <img src="images/myAux.jpeg" alt="My aux all wired up" style="width:40%" class="project-banner" />
         <p>The Otamatone does not have a hole for a 3.5mm jack. I took a dremel to the side of the Otamatone casing,
             ensuring it would not run into the circuit board. Surprisingly, the Otamatone is incredibly hollow. There
@@ -84,7 +97,7 @@
         <p>After reassembling the Otamatone to test it, I was pleasantly surprised to see the headphone jack stayed
             firmly in place without glue. This is surprising as the jack withstands a lot of force with plugging and
             unplugging.</p>
-        <p>I am planning on making a full set of analog audio signal processing circuits, so the Otamatone will be the
+        <p>I am planning to make a full set of analog audio signal processing circuits, so the Otamatone will be the
             first oscillator chained with them.</p>
 
 
