@@ -119,7 +119,7 @@
     .projects a.glassy {
         display: flex;
         flex-direction: column;
-        background: rgba(250, 250, 250, 0.6);
+        background: rgba(250, 250, 250, 0.5);
         backdrop-filter: blur(8px);
         border-radius: 12px;
         padding: 1.25rem;
@@ -250,7 +250,6 @@
         transform: translateY(-2px);
     }
 </style>
-<a href="about" class="floating-about">About Me</a>
 
 <body>
     <canvas id="bg"></canvas>
@@ -261,8 +260,8 @@
         const offscreenCanvas = document.createElement('canvas');
         const ctx = offscreenCanvas.getContext('2d');
 
-        const IX = 700;
-        let IY = 700;
+        const IX = 500;
+        let IY = 500;
         let imgData = ctx.createImageData(IX, IY);
         let t = 0;
         let start = Date.now();
@@ -370,33 +369,29 @@
                 switch (state) {
                     case 0:
                         let r5 = Math.random();
-                        g.cur = (125 * Math.sin(a)) * Math.sin(x / 10 + (r5 * 0.5) + a) + 125;
+                        g.cur = (50 * Math.sin(a)) * Math.sin(x / 5 + (r5 * 0.5) + a) + 50;
                         setPixel(x, g.cur, color);
                         break;
                     case 1:
-                        g.cur = a / x * (Math.cos(x * g.last) * x ^ 2 + lastInt ^ 2 - 1000);
+                        g.cur = IY * Math.asin((x / (0.5 / Math.sin(x * a))) / a) + 50;
                         setPixel(x, g.cur, color);
-  
                         break;
                     case 2:
-                                              g.cur = IX * Math.sin(x * IY + a * 0.08) + a;
+                        g.cur = IX * Math.sin(x * IY + a * 0.08) + a;
                         setPixel(x, g.cur, color);
-    
-
-
                         break;
                     case 3:
-                        g.cur = 1000 * Math.sin((a / 20) * a * Math.floor(a * x ** 2)) / x + 50;
+                        g.cur = 2.5 * IX * Math.sin(x + (a * 0.05)) + 400 + g.last / a;
                         setPixel(x, g.cur, color);
-
 
                         break;
                     case 4:
-                    g.cur = 2.5 * IX * Math.sin(x + (a * 0.05)) + 400 + g.last / a;
+                        g.cur = a / x * (Math.cos(x * g.last) * x ^ 2 + lastInt ^ 2 - 1000);
                         setPixel(x, g.cur, color);
+
                         break;
                     case 5:
-                                                g.cur = IY * Math.asin((x / (0.5 / Math.sin(x * a))) / a) + 50;
+                        g.cur = 1000 * Math.sin((a / 20) * a * Math.floor(a * x ** 2)) / x + 50;
                         setPixel(x, g.cur, color);
                         break;
                     case 6:
@@ -449,83 +444,8 @@
             requestAnimationFrame(draw);
         };
     </script>
+    <div style="height: 100vh;">hi</div>
 
-    <div class="projects glassy" style="align-items: center;">
-        <img src="/media/luroxin fog.png" alt="luroxin" width="35%" />
-
-        <h2 style="
-  color: black;
-  text-shadow:
-    2px 0 white,
-    -2px 0 white,
-    0 2px white,
-    0 -2px white,
-    1.5px 1.5px white,
-    -1.5px -1.5px white,
-    1.5px -1.5px white,
-    -1.5px 1.5px white;
-">Projects</h2>
-
-        <a href="otamatone/" class="glassy">
-            <h3>Otamatone Mod</h3>
-            Adding an aux output to an electronic toy instrument
-        </a>
-        <a href="arcadecabinet/" class="glassy">
-            <h3>Visitor Engagement Arcade Cabinet</h3>
-            Visitor engagement kiosk disguised as an arcade cabinet with glowing buttons and physics simulation
-        </a>
-        <a href="lessons/linearalgebra/" class="glassy">
-            <h3>Interactive Linear Algebra</h3>
-            Learn how vector space works with interactive web demos
-        </a>
-        <a href="lessons/elasticphysics/" class="glassy">
-            <h3>Physics Lesson Plan: Elastics and Springs in Parallel vs Series</h3>
-            AP Physics Lab: Energy in parallel & series elastic systems, includes worksheet, demos, proof, and teacher key
-        </a>
-        <a href="mididisplay/" class="glassy">
-            <h3>Piano Word Exhibit</h3>
-            A midi keyboard that spawns words and phrases as you play
-        </a>
-        <a href="footpetal/" class="glassy">
-            <h3>Wireless Footpetal </h3>
-            Simple no frills bluetooth footpedal, good for pageturning music, can be programmed to activate anything
-        </a>
-        <a href="yogatosh/" class="glassy">
-            <h3>MacOS on a Lenovo Yoga</h3>
-            Modification of a Lenovo laptop to run MacOS with working touchscreen and other hardware
-        </a>
-        <a href="timeplanner/" class="glassy">
-            <h3>Online Time Planner</h3>
-            A webapp to help you plan your afternoon using visuals
-        </a>
-        <a href="https://openprocessing.org/user/327511#sketches" target="_blank" class="glassy">
-            <h3>p5js Graphics Demos</h3>
-            Live p5js web art, cellular automata, games, and visual math
-        </a>
-        <a href="beatlestrio/" class="glassy">
-            <h3>Elanore Rigby for Violin, Cello, and Piano</h3>
-            Full arrangement of The Beatles 'Eleanor Rigby'
-        </a>
-        <a href="designs" class="glassy">
-            <h3>Cool Design Gallery</h3>
-            Fun designs of my logo
-        </a>
-        <a href="#" class="glassy">
-            <h3>Credit Card Sized Touch Synth (Writeup In Progress)</h3>
-            A tiny synth using ATmega32u4
-        </a>
-
-    </div>
-    <footer>
-        <!-- <img src="/src/media/luroxin (1).jpg" alt="luroxin logo" width="128" height="64" /> -->
-
-        <div>
-            <p>
-                Contact:
-                <a href="mailto:luroxin@luroxin.com">neiltmandir@gmail.com</a>
-            </p>
-        </div>
-    </footer>
 
 </body>
 
