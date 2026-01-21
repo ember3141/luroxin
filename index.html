@@ -38,6 +38,12 @@
 
     }
 
+    @media (min-width: 900px) {
+        :root {
+            font-size: clamp(15px, 1vw, 15px);
+        }
+    }
+
     :root::-webkit-scrollbar {
         display: none;
     }
@@ -51,15 +57,13 @@
     }
 
 
-    .projects>img {
-        border-radius: 12.5px;
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        align-items: stretch;
     }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
         font-size: 1.25rem;
         margin-top: 1rem;
     }
@@ -86,7 +90,16 @@
         max-width: 100%;
         padding: 0;
         margin-top: 3rem;
-        width: 60rem;
+        width: 85rem;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        align-items: stretch;
+        justify-items: center;
     }
 
     a {
@@ -108,6 +121,13 @@
         margin-right: 0;
     }
 
+    .projects-grid a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
     .glassy {
         background-color: rgba(152, 170, 172, 0);
         /* border-radius: 16px; */
@@ -119,7 +139,7 @@
     .projects a.glassy {
         display: flex;
         flex-direction: column;
-        background: rgba(250, 250, 250, 0.6);
+        background: rgba(240, 240, 240, 0.6);
         backdrop-filter: blur(8px);
         border-radius: 12px;
         padding: 1.25rem;
@@ -127,6 +147,43 @@
         text-decoration: none;
         color: black;
         transition: background 0.25s ease, transform 0.15s ease;
+        overflow: visible;
+    }
+
+    .projects-grid a.glassy {
+        margin: 0;
+        height: 100%;
+        align-items: center;
+        overflow: visible;
+        padding: 1.5rem;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .project-thumbnail {
+        width: 100%;
+        height: 240px;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        background: transparent;
+        display: block;
+        flex: 0 0 auto;
+    }
+
+    .project-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: auto;
+        text-align: center;
+    }
+
+    .project-copy h3,
+    .project-copy p {
+        margin: 0;
     }
 
 
@@ -451,7 +508,7 @@
     </script>
 
     <div class="projects glassy" style="align-items: center;">
-        <img src="/media/luroxin fog.png" alt="luroxin" width="35%" />
+        <img src="/media/luroxin fog_thumb.png" alt="luroxin" width="35%" />
 
         <h2 style="
   color: black;
@@ -466,54 +523,92 @@
     -1.5px 1.5px white;
 ">Projects</h2>
 
+        <div class="projects-grid">
         <a href="otamatone/" class="glassy">
-            <h3>Otamatone Mod</h3>
-            Adding an aux output to an electronic toy instrument
+            <img src="/media/otamatone_thumb.png" alt="Otamatone" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Otamatone Mod</h3>
+                <p>Adding an aux output to an electronic toy instrument</p>
+            </div>
         </a>
         <a href="arcadecabinet/" class="glassy">
-            <h3>Visitor Engagement Arcade Cabinet</h3>
-            Visitor engagement kiosk disguised as an arcade cabinet with glowing buttons and physics simulation
+            <img src="/media/arcade_thumb.png" alt="Arcade Cabinet" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Visitor Engagement Arcade Cabinet</h3>
+                <p>Visitor engagement kiosk disguised as an arcade cabinet with glowing buttons and physics simulation</p>
+            </div>
         </a>
         <a href="lessons/linearalgebra/" class="glassy">
-            <h3>Interactive Linear Algebra</h3>
-            Learn how vector space works with interactive web demos
+            <img src="/media/lineardemo_thumb.png" alt="Linear Algebra" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Interactive Linear Algebra</h3>
+                <p>Learn how vector space works with interactive web demos</p>
+            </div>
         </a>
         <a href="lessons/elasticphysics/" class="glassy">
-            <h3>Physics Lesson Plan: Elastics and Springs in Parallel vs Series</h3>
-            AP Physics Lab: Energy in parallel & series elastic systems, includes worksheet, demos, proof, and teacher key
+            <img src="/media/phys_demo_thumb.jpg" alt="Physics Lesson" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Physics Lesson Plan: Elastics and Springs in Parallel vs Series</h3>
+                <p>AP Physics Lab: Energy in parallel & series elastic systems, includes worksheet, demos, proof, and teacher key</p>
+            </div>
         </a>
         <a href="mididisplay/" class="glassy">
-            <h3>Piano Word Exhibit</h3>
-            A midi keyboard that spawns words and phrases as you play
+            <img src="/media/piano_thumb.png" alt="Piano Word Exhibit" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Piano Word Exhibit</h3>
+                <p>A midi keyboard that spawns words and phrases as you play</p>
+            </div>
         </a>
         <a href="footpetal/" class="glassy">
-            <h3>Wireless Footpetal </h3>
-            Simple no frills bluetooth footpedal, good for pageturning music, can be programmed to activate anything
+            <img src="/media/footpedal_thumb.png" alt="Wireless Footpetal" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Wireless Footpetal </h3>
+                <p>Simple no frills bluetooth footpedal, good for pageturning music, can be programmed to activate anything</p>
+            </div>
         </a>
         <a href="yogatosh/" class="glassy">
-            <h3>MacOS on a Lenovo Yoga</h3>
-            Modification of a Lenovo laptop to run MacOS with working touchscreen and other hardware
+            <img src="/media/mac_thumb.png" alt="MacOS on Yoga" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>MacOS on a Lenovo Yoga</h3>
+                <p>Modification of a Lenovo laptop to run MacOS with working touchscreen and other hardware</p>
+            </div>
         </a>
         <a href="timeplanner/" class="glassy">
-            <h3>Online Time Planner</h3>
-            A webapp to help you plan your afternoon using visuals
+            <img src="/media/time_thumb.jpg" alt="Time Planner" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Online Time Planner</h3>
+                <p>A webapp to help you plan your afternoon using visuals</p>
+            </div>
         </a>
         <a href="https://openprocessing.org/user/327511#sketches" target="_blank" class="glassy">
-            <h3>p5js Graphics Demos</h3>
-            Live p5js web art, cellular automata, games, and visual math
+            <img src="/media/p5js_thumb.jpg" alt="p5js Graphics" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>p5js Graphics Demos</h3>
+                <p>Live p5js web art, cellular automata, games, and visual math</p>
+            </div>
         </a>
         <a href="beatlestrio/" class="glassy">
-            <h3>Elanore Rigby for Violin, Cello, and Piano</h3>
-            Full arrangement of The Beatles 'Eleanor Rigby'
+            <img src="/media/rigbyy_thumb.jpg" alt="Beatles Trio" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Elanore Rigby for Violin, Cello, and Piano</h3>
+                <p>Full arrangement of The Beatles 'Eleanor Rigby'</p>
+            </div>
         </a>
         <a href="designs" class="glassy">
-            <h3>Cool Design Gallery</h3>
-            Fun designs of my logo
+            <img src="/media/hollo.png" alt="Design Gallery" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Cool Design Gallery</h3>
+                <p>Fun designs of my logo</p>
+            </div>
         </a>
         <a href="#" class="glassy">
-            <h3>Credit Card Sized Touch Synth (Writeup In Progress)</h3>
-            A tiny synth using ATmega32u4
+            <img src="/media/minisynth_thumb.jpg" alt="Touch Synth" class="project-thumbnail" onerror="this.style.display='none'">
+            <div class="project-copy">
+                <h3>Credit Card Sized Touch Synth (Writeup In Progress)</h3>
+                <p>A tiny synth using ATmega32u4</p>
+            </div>
         </a>
+        </div>
 
     </div>
     <footer>
